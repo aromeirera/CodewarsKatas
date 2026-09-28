@@ -10,16 +10,20 @@
 // "This is another test" --> "This is rehtona test"
 function spinWords(words) {
     let sentence=words.split(" ");
-    let results;
+    let results = [];
     for (let i of sentence){
-        if (sentence.length>=4){
-            return sentence.reverse(i);
+        if (i.length>=5){
+            let word = i.split("");
+            word.reverse();
+            results.push(word.join(""));
         }
-        results.push(sentence.join(" "));
+        else {
+            results.push(i);
+        }
     }
-    return results;
+    return results.join(" ");
 }
-console.log(spinWords("Hey wollef sroirraw"))
+console.log(spinWords("Hey fellow warriors"))
 // function spinWords(string){
 //  let letters = string.split(" ");
 //  let reversed=[];

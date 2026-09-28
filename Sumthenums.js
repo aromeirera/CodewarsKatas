@@ -14,9 +14,14 @@
 // The input range is 1 <= N <= 10^9 and there are 80 ( 40 in LC ) test cases, of which most are random.
 function sumOfSums(n) {
   function sumOfnum(Z){
-
-    return Z 
+    let sum = 0;
+    for (let i = 1; i <= Z; i++) {
+      sum += i;
+    }
+    return sum;
   }
 
-  return 0n;
+  return sumOfnum((n * (n + 1)) / 2);
+
 }
+sumOfSums(3)
