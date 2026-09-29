@@ -20,3 +20,6 @@ function solution(string) {
     }
   return result
 }
+console.log(solution("camelCasing"))
+console.log(solution("identifier"))
+console.log(solution(""))
