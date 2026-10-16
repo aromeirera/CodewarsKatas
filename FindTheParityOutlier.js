@@ -11,7 +11,7 @@
   
 function findOutlier(integers){
   //your code here
-  if (integers.lenght <3){
+  if (integers.length <3){
     return console.log("Error")
   }
   let even =[]
