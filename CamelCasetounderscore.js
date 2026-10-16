@@ -38,16 +38,23 @@
 //   return "";
 // }
 function toUnderScore(name) {
-    let rege=/A-Z/||/0-9/
+    let rege=/[A-Z]/
+    let regex=/[0-9]/
     let results=""
     let word=name.split("")
+    console.log(word)
     for(let el of word){
-        if (rege.test(el)) {
-            results += el+"_"
+        if (rege.test(el[0])) {
+            results += el
+        }else if (rege.test(el)||regex.test(el)) {
+            results += "_"+el
+           // console.log(results)
+        }else if(regex.test(el) && regex.test(el+1)){
+            results += "_"+el+el+1+"_"
         }else{
             results += el
         }
     }
     return results
 }
-console.log(toUnderScore("Calculate15Plus5Equals20"))
+console.log(toUnderScore("_UnderscoreMarked_Test_Name_"))
