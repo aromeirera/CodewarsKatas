@@ -20,18 +20,41 @@
 
 // perimeter(5)  should return 80
 // perimeter(7)  should return 216
+// function perimeter(n) {
+//   if (n===0){
+//     return 4
+//   }
+//   let result = [1, 1];
+//   //let result = []
+//   let sum=0
+//   //let arr=[1,1,2,3,5,8]
+//    for(let el =0;el<n.length;n++){
+//         sum=(n[el]+n[el+1])*4
+//      result.push(sum)
+//    }
+//     return result
+// }
+// console.log(perimeter([1 ,1 , 2 , 3 , 5 , 8]))
 function perimeter(n) {
-  if (n===0){
-    return 4
-  }
-  let result = [1, 1];
-  //let result = []
-  let sum=0
-  //let arr=[1,1,2,3,5,8]
-   for(let el =0;el<n.length;n++){
-        sum=(n[el]+n[el+1])*4
-     result.push(sum)
-   }
-    return result
+    if (n === 0) {
+        return 4;
+    }
+
+    let result = [1, 1];
+
+    for (let el = 0; el < n - 1; el++) {
+        let sum = result[el] + result[el + 1];
+        result.push(sum);
+    }
+
+    let total = 0;
+
+    for (let el = 0; el < result.length; el++) {
+        total += result[el];
+    }
+
+    return total * 4;
 }
-console.log(perimeter([1 ,1 , 2 , 3 , 5 , 8]))
+
+//console.log(perimeter(5)); // 80
+//console.log(perimeter(7)); // 216
