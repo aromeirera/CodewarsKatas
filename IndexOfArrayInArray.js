@@ -32,3 +32,30 @@ var searchArray = function (arrayToSearch, query) {
 // TODO your code here
   
 }
+var searchArray = function (arrayToSearch, query) {
+  // Validate the query
+  if (!Array.isArray(query) || query.length !== 2) {
+    throw new Error("query must be an array of length 2");
+  }
+
+  // Validate the array to search
+  if (!Array.isArray(arrayToSearch)) {
+    throw new Error("arrayToSearch must be an array");
+  }
+
+  for (var i = 0; i < arrayToSearch.length; i++) {
+    var item = arrayToSearch[i];
+    if (!Array.isArray(item) || item.length !== 2) {
+      throw new Error("each element must be an array of length 2");
+    }
+  }
+
+  // Search (validation is finished, so every item is safe to compare)
+  for (var j = 0; j < arrayToSearch.length; j++) {
+    if (arrayToSearch[j][0] === query[0] && arrayToSearch[j][1] === query[1]) {
+      return j;
+    }
+  }
+
+  return -1;
+};
