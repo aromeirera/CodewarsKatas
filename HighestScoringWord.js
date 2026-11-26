@@ -50,7 +50,9 @@ function high(x) {
 
     if (score > highestScore) {
       highestScore = score;
+      console.log(highestScore);
       highestWord = words[i];
+      console.log(highestWord);
     }
   }
 
